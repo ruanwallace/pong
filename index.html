@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <canvas width="600" height="400"></canvas>
+        
+        <ul>
+            <li><button id="start">Começar</button></li>
+            <li><button id="pause">Pausar</button></li>
+            <li><button id="restart">Recomeçar</button></li>
+         </ul>
+
+        <audio id="raquetada" src="./sons/raquetada.mp3"></audio>
+        <audio id="ponto" src="./sons/ponto.mp3"></audio>
+        <audio id="trilha" src="./sons/trilha.wav" loop></audio>
+        <audio id="vitoria" src="./sons/vitoria.wav"></audio>
+        <audio id="derrota" src="./sons/derrota.wav"></audio>
+
+        <script src="minhaRaquete.js"></script>
+        <script src="raqueteOponente.js"></script>
+        <script src="bolinha.js"></script>
+        <script src="pong.js"></script>
+    </body>
+</html>

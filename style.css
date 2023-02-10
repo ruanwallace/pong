@@ -1,0 +1,40 @@
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 6%;
+    vertical-align: top;
+}
+
+button {
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#start:hover {
+    background: lightgreen;
+}
+
+#start:active {
+    font-size: 15px;
+}
+
+#pause:hover {
+    background: rgb(238, 238, 80);
+}
+
+#pause:active {
+    font-size: 15px;
+}
+
+#restart:hover {
+    background: rgb(250, 60, 60);
+}
+
+#restart:active {
+    font-size: 15px;
+}
