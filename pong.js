@@ -89,6 +89,8 @@ function recomecaOJogo() {
     xBolinha = 300;
     posicaoYMinhaRaquete = 171;
     posicaoYRaqueteOponente = 171;
+    velocidadeXBolinha = 2;
+    velocidadeYBolinha = 2;
     audioTrilha.currentTime = 0;
     pausaOJogo();
     atualiza();
