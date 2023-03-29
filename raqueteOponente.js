@@ -1,31 +1,24 @@
-// Coordenadas inicial da raquete oponente.
 const posicaoXRaqueteOponente = 579;
 let posicaoYRaqueteOponente = 171;
 
-// Tamanho da raquete oponente.
 const larguraRaqueteOponente = 11;
 const alturaRaqueteOponente = 58;
 
-// Nível de dificuldade do oponente.
 let dificuldade = 0;
 
-// Ponto do oponente.
 let pontosOponente = 0;
 
-// Desenha a raquete do oponente.
 function raqueteOponente() {
     pincel.fillStyle = "white";
     pincel.fillRect(posicaoXRaqueteOponente, posicaoYRaqueteOponente, larguraRaqueteOponente, alturaRaqueteOponente);
 }
 
-// Parâmetro da raquete oponente.
 function parametroRaqueteOponente() {
     return xBolinha + raio >= posicaoXRaqueteOponente &&
         yBolinha - raio <= posicaoYRaqueteOponente + alturaRaqueteOponente &&
         yBolinha + raio >= posicaoYRaqueteOponente;
 }
 
-// Colisão da bolinha com a raquete oponente
 function colideRaqueteOponente() {
     if (parametroRaqueteOponente()) {
         velocidadeXBolinha *= -1;
@@ -33,7 +26,6 @@ function colideRaqueteOponente() {
     }
 }
 
-// Gera níveis de dificuldade, fazendo com que a raquete oponente mude o seu comportamento.
 function geraDificuldade() {
     if (pontosOponente >= meusPontos) {
         dificuldade = Math.random() * 120 - 60;
@@ -42,7 +34,6 @@ function geraDificuldade() {
     }
 }
 
-// Faz com que a raquete oponente não ultrapasse a borda de cima e a de baixo.
 function oponenteNaoColideComALateral() {
     if (posicaoYRaqueteOponente <= 0) {
         posicaoYRaqueteOponente = 0;
@@ -52,13 +43,11 @@ function oponenteNaoColideComALateral() {
     }  
 }
 
-// Movimenta a raquete oponente de acordo com a coordenada Y da bola.
 function movimentaRaqueteOponente() {
     let velocidadeRaqueteOponente = yBolinha - alturaRaqueteOponente / 2;
     posicaoYRaqueteOponente = velocidadeRaqueteOponente + dificuldade;
 }
 
-// Marca pontos para o oponente.
 function marcaPontos() {
     if (xBolinha - raio <= 0) {
         pontosOponente += 1;
@@ -66,7 +55,6 @@ function marcaPontos() {
     }
 }
 
-// Se o oponente marcar 5 pontos primeiro, mostrará que você perdeu.
 function oponenteGanhou() {
     if (pontosOponente == 5) {
         pincel.fillStyle = "red";
@@ -79,7 +67,6 @@ function oponenteGanhou() {
     }
 }
 
-// Mostra o placar do oponente.
 function placarOponente() {
     pincel.textAlign = "center";
     pincel.fillStyle = "white";
@@ -89,5 +76,4 @@ function placarOponente() {
     oponenteGanhou();
 }
 
-// Executa a função que gera dificuldade.
 setInterval(geraDificuldade, 4000)
